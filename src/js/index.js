@@ -16,19 +16,16 @@ function toggle()
 const modal = document.querySelector('.todo_modal');
 document.querySelector('.todo__container').addEventListener('click', toggle);
 
-let todo_array = [];
 const input = document.querySelector('#todo_id');
 
-const addItem = () =>
-{
-    todo_array.push(input.value);
-}
-
-const display_todo = (item) =>
+const display_todo = item =>
 {
     let html =
     `
-        <div>${item}</div>
+        <ul class='list_container'>
+            <li>${item}</li>
+            <span class='list_delete'>X</span>
+        </ul>
     `;
 
     document.querySelector('.todo_modal').insertAdjacentHTML('beforeend', html);
@@ -38,7 +35,7 @@ document.addEventListener('keypress', event =>
 {
     if (event.keyCode === 13 || event.which === 13)
     {
-        addItem();
-        display_todo(todo_array);
+        const todo_input = input.value;
+        display_todo(todo_input);
     }
 });
