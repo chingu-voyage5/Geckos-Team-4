@@ -1,7 +1,10 @@
 require('../styles/app.css')
+import { renderTodos } from './views'
+import { setFilters } from './filters'
+import { createTodo, loadTodos } from './todos'
 
 
-function toggle()
+/*function toggle()
 {
     if (modal.style.display == 'flex')
     {
@@ -14,28 +17,38 @@ function toggle()
 };
 
 const modal = document.querySelector('.todo_modal');
-document.querySelector('.todo__container').addEventListener('click', toggle);
+document.querySelector('.todo__container').addEventListener('click', toggle); */
 
-const input = document.querySelector('#todo_id');
+renderTodos()
 
-const display_todo = item =>
-{
-    let html =
-    `
-        <ul class='list_container'>
-            <li>${item}</li>
-            <span class='list_delete'>X</span>
-        </ul>
-    `;
+document.querySelector('#search-text').addEventListener('input', (e) => {
+    setFilters({
+        searchText: e.target.value
+    })
+    renderTodos()
+})
 
-    document.querySelector('.todo_modal').insertAdjacentHTML('beforeend', html);
-}
+document.querySelector('#new-todo').addEventListener('submit', (e) => {
+    const text = e.target.elements.text.value.trim()
+    e.preventDefault()
 
-document.addEventListener('keypress', event =>
-{
-    if (event.keyCode === 13 || event.which === 13)
-    {
-        const todo_input = input.value;
-        display_todo(todo_input);
+    if (text.length > 0) {
+        createTodo(text)
+        renderTodos()
+        e.target.elements.text.value = ''
     }
-});
+})
+
+document.querySelector('#hide-completed').addEventListener('change', (e) => {
+    setFilters({
+        hideCompleted: e.target.checked
+    })
+    renderTodos()
+})
+
+window.addEventListener('storage', (e) => {
+    if (e.key === 'todos') {
+        loadTodos()
+        renderTodos()
+    }
+})
