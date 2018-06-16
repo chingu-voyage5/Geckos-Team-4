@@ -6,7 +6,6 @@
     "type": "git",
     "url": "https://github.com/chingu-voyage5/Geckos-Team-4"
   },
-
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
