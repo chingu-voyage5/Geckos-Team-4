@@ -14,6 +14,9 @@ body
     height: 100%;
     background-image: url("https://momentumdash.com/backgrounds/08.jpg");
     color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 1;
 }
 
 input
@@ -34,6 +37,7 @@ input
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border: 1px solid red;
 }
 
 .weather
@@ -49,9 +53,41 @@ input
     width: 100%;
     font-size: 28px;
     display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.css_sucks
+{
+    width: 20%;
+}
+
+.main_content
+{
+    height: 80%;
+    width: 60%;
+    font-size: 28px;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
     justify-content: center;
+}
+
+.todo_modal
+{
+    height: 30%;
+    width: 20%;
+    background: #222211;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.aactions__container
+{
+    display: flex;
+    justify-content: space-between;
 }
 
 .content__container .time
@@ -90,10 +126,7 @@ input
   display: flex;
   width: 33.33%;
   justify-content: flex-end;
+  align-self: flex-end;
+  font-size: 18px;
 }
 
-.todo
-{
-    align-self: flex-end;
-    font-size: 18px;
-}

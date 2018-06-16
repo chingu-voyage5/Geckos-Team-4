@@ -3760,6 +3760,18 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 
 /***/ }),
 
+/***/ "./src/js/clock.js":
+/*!*************************!*\
+  !*** ./src/js/clock.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.convertTo12 = convertTo12;\nexports.setTime = setTime;\n// josh added this file to test git stuff \n// check if it is morning or afternoon + convert to 12h clock\n\nfunction convertTo12(hours) {\n    if (hours > 12) {\n        document.getElementById(\"timeGreetingText\").innerHTML = \"Evening\";\n        return hours - 12;\n    } else {\n        document.getElementById(\"timeGreetingText\").innerHTML = \"Morning\";\n        return \"0\" + hours.toString();\n    }\n}\n\n// output the time to the frontend\nfunction setTime() {\n\n    if (convertTo12(hours) < 2) {\n        document.getElementById(\"digit1\").innerHTML = convertTo12(hours);\n        // console.log('length less than 2');        \n    } else {\n        document.getElementById(\"digit1\").innerHTML = \"0\" + convertTo12(hours).toString();\n        // console.log('length more than 1');\n    }\n\n    if (minutes.toString().length < 2) {\n        document.getElementById(\"digit2\").innerHTML = +\"0\" + minutes.toString();\n    } else {\n        document.getElementById(\"digit2\").innerHTML = minutes;\n    }\n}\n\n//# sourceURL=webpack:///./src/js/clock.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -3768,7 +3780,7 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _test = __webpack_require__(/*! ./test */ \"./src/js/test.js\");\n\nvar _test2 = _interopRequireDefault(_test);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n__webpack_require__(/*! ../styles/app.css */ \"./src/styles/app.css\");\n\n\nconsole.log('I imported ' + _test2.default + ' from another module!!');\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("\n\nvar _test = __webpack_require__(/*! ./test */ \"./src/js/test.js\");\n\nvar _test2 = _interopRequireDefault(_test);\n\nvar _clock = __webpack_require__(/*! ./clock */ \"./src/js/clock.js\");\n\nvar setTime = _interopRequireWildcard(_clock);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n__webpack_require__(/*! ../styles/app.css */ \"./src/styles/app.css\");\n\n\nconsole.log('I imported ' + _test2.default + ' from another module!! ' + clock);\n\nsetInterval(setTime, 1000);\n\nvar now = new Date();\nvar seconds = now.getSeconds();\nvar minutes = now.getMinutes();\nvar hours = now.getHours();\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 

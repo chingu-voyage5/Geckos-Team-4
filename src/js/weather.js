@@ -17,7 +17,7 @@ export function getLocation() {
 
 function getWeather(position) {
 
-	let lat = position.coords.latitude;
+    let lat = position.coords.latitude;
     let lon = position.coords.longitude;
 
     // For temperature in Fahrenheit use units=imperial
@@ -39,21 +39,21 @@ function getWeather(position) {
 }
 
 function displayWeather() {
-	if(weatherRequest.readyState != 4) {
-		return;
-	}
+    if (weatherRequest.readyState != 4) {
+        return;
+    }
 
-	if (weatherRequest.status != 200 || weatherRequest.responseText === "") {
-	 	console.log(`Weather error`);
-	 	return;
-	}
+    if (weatherRequest.status != 200 || weatherRequest.responseText === "") {
+        console.log(`Weather error`);
+        return;
+    }
 
-	response = JSON.parse(weatherRequest.responseText);
-	//console.log(response);
-	location.innerHTML = `${response.name} , ${response.sys["country"]} `;
-	temperature.innerHTML = `${response.main["temp"]}°F`;
-	let description = response.weather[0].main;
-	displayWeatherIcon(description);
+    response = JSON.parse(weatherRequest.responseText);
+    //console.log(response);
+    location.innerHTML = `${response.name} , ${response.sys["country"]} `;
+    temperature.innerHTML = `${response.main["temp"]}°F`;
+    let description = response.weather[0].main;
+    displayWeatherIcon(description);
 
 }
 
