@@ -23,10 +23,23 @@
     </div>
 
     <div class="content__container">
-        <span class="time">18:30</span>
-        <h2>Good Evening, User</h2>
-        <h3>What is your main focus for today?</h3>
-        <input type="text">
+        <div class="css_sucks"></div>
+        <div class="main_content">
+            <span class="time">18:30</span>
+            <h2>Good Evening, User</h2>
+            <h3>What is your main focus for today?</h3>
+            <input type="text">
+        </div>
+        <div class="todo_modal">
+            <input type="text" id="item">
+            <div class="container">
+                <!-- Uncompleted tasks -->
+                <ul class="todo" id="todo"></ul>
+            
+                <!-- Completed tasks -->
+                <ul class="todo" id="completed"></ul>
+            </div>
+        </div>
     </div>
 
     <div class="footer__container">
@@ -34,10 +47,7 @@
         <div class="quote__container">
             <span class="quote">“Each morning we are born again. What we do today is what matters most.”</span>
         </div>
-
-        <div class="todo__container">
-            <div class="todo">Todo</div>
-        </div>
+        <div class="todo__container">TODO</div>
     </div>
 </body>
 </html>
