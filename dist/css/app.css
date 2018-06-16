@@ -1,5 +1,99 @@
-h1
+*
 {
-    color: teal;
-    text-align: center;
+    box-sizing: border-box;
+}
+
+html
+{
+    height: 100%;
+    width: 100%;
+}
+
+body
+{
+    height: 100%;
+    background-image: url("https://momentumdash.com/backgrounds/08.jpg");
+    color: white;
+}
+
+input
+{
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 24px;
+  width: 30%;
+}
+
+.header__container
+{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.weather
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.content__container
+{
+    height: 80%;
+    width: 100%;
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content__container .time
+{
+    font-size: 12rem;
+    margin-bottom: -60px;
+}
+
+.footer__container
+{
+  display: flex;
+  height: 10%;
+}
+
+.empty
+{
+  display: flex;
+  width: 33.33%;
+}
+
+.quote__container
+{
+  display: flex;
+  width: 33.34%;
+  justify-content: center;
+}
+
+.quote
+{
+    align-self: flex-end;
+    font-size: 18px;
+}
+
+.todo__container
+{
+  display: flex;
+  width: 33.33%;
+  justify-content: flex-end;
+}
+
+.todo
+{
+    align-self: flex-end;
+    font-size: 18px;
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
 </head>
 <body>
     <div class='header__container'>
@@ -22,11 +22,15 @@
         </div>
     </div>
 
-    <div class="content__container">
+    <div class="content__container">        
         <div class="css_sucks"></div>
-        <div class="main_content">
-            <span class="time">18:30</span>
-            <h2>Good Evening, User</h2>
+        <div class="main_content">            
+            <span class="time">
+                <span id="digit1"></span>
+                <span>:</span>
+                <span id="digit2"></span>            
+            </span>
+            <h2>Good <span id="timeGreetingText"></span>, User</h2>
             <h3>What is your main focus for today?</h3>
             <input type="text">
         </div>
