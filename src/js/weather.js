@@ -1,5 +1,5 @@
  console.log(`weather module`);
-// import Skycons from './skycons';
+ // import Skycons from './skycons';
 
 const location = document.querySelector('.weather');
 const temperature = document.getElementById('temperature');
@@ -7,11 +7,10 @@ const weatherIcon = document.getElementById('weatherIcon');
 let weatherRequest;
 let response;
 
-function getLocation() {
+export function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getWeather);
     } else {
-    	console.log('else');
         location.innerHTML = `Geolocation is not supported by this browser.`;
     }
 }
@@ -24,6 +23,7 @@ function getWeather(position) {
     // For temperature in Fahrenheit use units=imperial
 	// For temperature in Celsius use units=metric
 	// Temperature in Kelvin is used by default
+	//https://openweathermap.org/current#geo
     let query = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&APPID=c9a51511655beb8cd521d80f17f5bdb8`;
     console.log(query);
 
@@ -59,12 +59,11 @@ function displayWeather() {
 
 function displayWeatherIcon(description) {
 	// https://www.npmjs.com/package/skycons
-	// var skycons = new Skycons({"color": "pink"});
+	// <canvas id="icon1" width="64" height="64"></canvas>
+	// let skycons = new Skycons({"color": "pink"});
 	// skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
 	// skycons.play();
 	//https://openweathermap.org/weather-conditions
 	 weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png" alt="Weather Icon"/>`;
 
 }
-
-document.onload = getLocation();
