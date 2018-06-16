@@ -1,6 +1,5 @@
 require('../styles/app.css')
-import num from './test';
-import _ from './weather';
+import { getLocation } from './weather';
 
 
- console.log(`I imported ${num} from another module!!`);
+ document.onload = getLocation();

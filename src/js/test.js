@@ -1,2 +1,2 @@
-console.log('imported module');
-export default 99;
+ console.log('imported module');
+ export default 99;
