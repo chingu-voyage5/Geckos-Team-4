@@ -1,10 +1,10 @@
 html,
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Quicksand', sans-serif;
+  padding: 0;  
   background-color: #5F9EA0;
   color: white;
+  height: 100%;
 }
 
 .background {
@@ -15,15 +15,16 @@ body {
   z-index: 0;
 }
 
-.header__container {
+.grid {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 1fr 10fr 5fr 1fr;
-    height: 97%;
-    padding-top: 1%;
+    height: 95%;
     padding-bottom: 1%;
+    padding-top: 1%;
     align-items : center;
     justify-items: center;
+    border: 3px solid #FF0000;
 }
 .span-col-6{grid-column: span 6 / auto;}
 
