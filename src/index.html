@@ -6,11 +6,12 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
 <body>
     <div class="grid">    
         
-        <div>
+        <div class="linkArea">
             <div class='header__container'>
                 <div>
                     <button>Links</button>
@@ -20,31 +21,33 @@
             </div>
         </div>
 
-        <div>Search</div>
+        <!-- <div>Search</div> -->
 
-        <div class="span-col-6">GAP</div>
+        <!-- <div class="span-col-6">GAP</div> -->
 
-        <div>
+        <div class="weatherArea">
             <div>
-                <span id="weatherIcon"></span>
+                <span id="weatherIcon"></span>        
+                <br>
                 <span id="temperature"></span>
                 <div class="weather">
                 </div>
             </div>
         </div>
 
-        <div class="span-col-9">
+        <div class="span-col-9 centerText content__container css_sucks">
             <span class="time">
                 <span id="digit1"></span>
                 <span>:</span>
                 <span id="digit2"></span>            
             </span>
+            <br />
             <h2>Good <span id="timeGreetingText"></span>, User</h2>    
         </div>
 
         <div class="span-col-9 focus">
             <h3>What is your main focus for today?</h3>
-            <input type="text">
+            <input type="text" class="focusText">
         </div>
 
         <div class="span-col-3">Photo Credit</div>
@@ -53,15 +56,15 @@
             <span class="quote">“Each morning we are born again. What we do today is what matters most.”</span>
         </div>
 
-        <div class="span-col-3 todo_modal">
-            <input type="text" id="item">
+        <div class="span-col-3 todo_modal todo-list">               
+            <input type="text" id="item" class="focusText">
             <div class="container">
                 <!-- Uncompleted tasks -->
                 <ul class="todo" id="todo"></ul>
             
                 <!-- Completed tasks -->
                 <ul class="todo" id="completed"></ul>
-            </div>
+            </div>           
         </div>
 
     </div>
