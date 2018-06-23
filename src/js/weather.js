@@ -1,28 +1,47 @@
  console.log(`weather module loaded`);
 
+ const defaultCities = [`Miami`, `New York`, `Los Angeles`, `Chicago`];
+
 const location = document.querySelector('.location');
 const temperature = document.getElementById('temperature');
 const weatherIcon = document.getElementById('weatherIcon');
+const APPID = `c9a51511655beb8cd521d80f17f5bdb8`;
 let weatherRequest;
 let response;
 
 export function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getWeather);
+        navigator.geolocation.getCurrentPosition(getWeather, error);
     } else {
         location.innerHTML = `Geolocation is not supported by this browser.`;
     }
 }
 
-function getWeather(position) {
+function error(){
+    //console.log(`getCurrentPosition error`);
+    let city = defaultCities[(Math.floor(Math.random() * (defaultCities.length)))];
+    getWeather(null, city)
 
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
+}
 
-    // For temperature in: Fahrenheit use units=imperial, Celsius use units=metric
-	// Temperature in Kelvin is used by default
-	//https://openweathermap.org/current#geo
-    let query = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&APPID=c9a51511655beb8cd521d80f17f5bdb8`;
+function getWeather(position, city=null) {
+
+    let query;
+
+    if(position){
+
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+
+
+        // For temperature in: Fahrenheit use units=imperial, Celsius use units=metric
+    	// Temperature in Kelvin is used by default
+    	//https://openweathermap.org/current#geo
+        query = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&APPID=${APPID}`;
+    }
+    else {
+        query = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${APPID}`;
+    }
     //console.log(query);
 
     weatherRequest = new XMLHttpRequest();
@@ -47,7 +66,7 @@ function displayWeather() {
     }
 
     response = JSON.parse(weatherRequest.responseText);
-    console.log(response);
+    //console.log(response);
     location.innerHTML = `${response.name}, ${response.sys["country"]} `;
     temperature.innerHTML = `${(response.main["temp"]).toString().slice(0,2)}°F`; //truncate decimal part
     displayWeatherIcon();

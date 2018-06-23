@@ -40,8 +40,7 @@ input
     border: 1px solid red;
 }
 
-.weather
-{
+.weather {
     margin-top: 10px;
     font-size: 18px;
     display: flex;
