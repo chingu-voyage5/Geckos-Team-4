@@ -1,22 +1,12 @@
 require('../styles/app.css')
-import num from './test';
-//sara:comment out following line
-// import * as setTime from './clock';
-
+import { getLocation } from './weather';
 import { setTime } from './clock';
 
 //sara:comment out following line
-// console.log(`I imported ${num} from another module!! ${clock}` );
 //sara:added following line
+document.onload = getLocation();
 setInterval(setTime, 1000);
 
-
-
-
-import _ from './weather';
-
-
-console.log(`I imported ${num} from another module!!`);
 
 const data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem('todoList')) : {
     todo: [],
@@ -25,16 +15,16 @@ const data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getIte
 
 renderTodoList();
 
-document.getElementById('item').addEventListener('keydown', function (e) 
+document.getElementById('item').addEventListener('keydown', function (e)
 {
     var value = this.value;
-    if ((e.code === 'Enter' || e.code === 'NumpadEnter') && value) 
+    if ((e.code === 'Enter' || e.code === 'NumpadEnter') && value)
     {
         addItem(value);
     }
 });
 
-function addItem(value) 
+function addItem(value)
 {
     addItemToDOM(value);
     document.getElementById('item').value = '';
@@ -43,29 +33,29 @@ function addItem(value)
     update();
 }
 
-function renderTodoList() 
+function renderTodoList()
 {
     if (!data.todo.length && !data.completed.length) return;
 
-    for (var i = 0; i < data.todo.length; i++) 
+    for (var i = 0; i < data.todo.length; i++)
     {
         var value = data.todo[i];
         addItemToDOM(value);
     }
 
-    for (var j = 0; j < data.completed.length; j++) 
+    for (var j = 0; j < data.completed.length; j++)
     {
         var value = data.completed[j];
         addItemToDOM(value, true);
     }
 }
 
-function update() 
+function update()
 {
     localStorage.setItem('todoList', JSON.stringify(data));
 }
 
-function removeItem() 
+function removeItem()
 {
     var item = this.parentNode.parentNode;
     var parent = item.parentNode;
@@ -82,18 +72,18 @@ function removeItem()
     parent.removeChild(item);
 }
 
-function completeItem() 
+function completeItem()
 {
     var item = this.parentNode.parentNode;
     var parent = item.parentNode;
     var id = parent.id;
     var value = item.innerText;
 
-    if (id === 'todo') 
+    if (id === 'todo')
     {
         data.todo.splice(data.todo.indexOf(value), 1);
         data.completed.push(value);
-    } else 
+    } else
     {
         data.completed.splice(data.completed.indexOf(value), 1);
         data.todo.push(value);
@@ -109,7 +99,7 @@ function completeItem()
 }
 
 // Adds a new item to the todo list
-function addItemToDOM(text, completed) 
+function addItemToDOM(text, completed)
 {
     var list = (completed) ? document.getElementById('completed') : document.getElementById('todo');
 
