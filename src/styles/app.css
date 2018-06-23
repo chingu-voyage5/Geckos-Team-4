@@ -130,3 +130,7 @@ input
   font-size: 18px;
 }
 
+.completed
+{
+    text-decoration: line-through;
+}
