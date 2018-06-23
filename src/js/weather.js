@@ -1,7 +1,6 @@
- console.log(`weather module`);
- // import Skycons from './skycons';
+ console.log(`weather module loaded`);
 
-const location = document.querySelector('.weather');
+const location = document.querySelector('.location');
 const temperature = document.getElementById('temperature');
 const weatherIcon = document.getElementById('weatherIcon');
 let weatherRequest;
@@ -20,12 +19,11 @@ function getWeather(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
 
-    // For temperature in Fahrenheit use units=imperial
-	// For temperature in Celsius use units=metric
+    // For temperature in: Fahrenheit use units=imperial, Celsius use units=metric
 	// Temperature in Kelvin is used by default
 	//https://openweathermap.org/current#geo
     let query = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&APPID=c9a51511655beb8cd521d80f17f5bdb8`;
-    console.log(query);
+    //console.log(query);
 
     weatherRequest = new XMLHttpRequest();
 
@@ -49,21 +47,17 @@ function displayWeather() {
     }
 
     response = JSON.parse(weatherRequest.responseText);
-    //console.log(response);
-    location.innerHTML = `${response.name} , ${response.sys["country"]} `;
-    temperature.innerHTML = `${response.main["temp"]}°F`;
-    let description = response.weather[0].main;
-    displayWeatherIcon(description);
+    console.log(response);
+    location.innerHTML = `${response.name}, ${response.sys["country"]} `;
+    temperature.innerHTML = `${(response.main["temp"]).toString().slice(0,2)}°F`; //truncate decimal part
+    displayWeatherIcon();
 
 }
 
-function displayWeatherIcon(description) {
-	// https://www.npmjs.com/package/skycons
-	// <canvas id="icon1" width="64" height="64"></canvas>
-	// let skycons = new Skycons({"color": "pink"});
-	// skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
-	// skycons.play();
+function displayWeatherIcon() {
 	//https://openweathermap.org/weather-conditions
-	 weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png" alt="Weather Icon"/>`;
+	 //weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/w/${response.weather[0].icon}.png" alt="Weather Icon"/>`;
+     //mapping openweather weather to icons https://erikflowers.github.io/weather-icons/api-list.html
+     weatherIcon.innerHTML = `<i class="wi wi-owm-${response.weather[0].id}"></i>`
 
 }
