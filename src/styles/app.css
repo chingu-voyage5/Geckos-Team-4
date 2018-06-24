@@ -34,7 +34,7 @@ body {
     padding-top: 1%;
     align-items : center;
     justify-items: center;
-    border: 3px solid #FF0000;
+    /* border: 3px solid #FF0000; */
 }
 .span-col-6{grid-column: span 6 / auto;}
 
@@ -49,8 +49,7 @@ body {
 .span-row-3{grid-row: span 3 / auto;}
 
 .todo-list {
-  max-height: 500px;
-  overflow: scroll;
+  max-height: 500px;  
 }
 
 .weatherArea {
@@ -68,8 +67,7 @@ input[type=text] {
   border-bottom: 2px solid white;
   background-color: transparent; 
   color: white;
-  font-size: 24px;
-  width: 100%;
+  font-size: 24px;  
 }
 
 .focusText {
