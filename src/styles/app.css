@@ -89,8 +89,6 @@ input[type=text] {
   width: 100%;
   overflow-x: visible;
 }
-
-
 .completed
 {
     text-decoration: line-through;
@@ -99,4 +97,3 @@ input[type=text] {
 .time {
   font-size: 900%;
 }
-
