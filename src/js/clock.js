@@ -8,10 +8,10 @@ let hours = now.getHours();
 
   function convertTo12(hours) {
       if (hours > 12) {        
-          document.getElementById("timeGreetingText").innerHTML = "Evening";
+          document.getElementById("timeGreetingText").innerHTML = " Evening";
           return (hours - 12);
       } else {
-          document.getElementById("timeGreetingText").innerHTML = "Morning";
+          document.getElementById("timeGreetingText").innerHTML = " Morning";
           return ("0" + hours.toString());
       }
   }
