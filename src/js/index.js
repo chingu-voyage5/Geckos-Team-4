@@ -1,6 +1,7 @@
 require('../styles/app.css')
 import uuidv4 from 'uuid/v4';
 import { renderTodos, saveTodos, loadTodos } from './todos';
+import { renderFocus } from './focus';
 //sara:comment out following line
 // import * as setTime from './clock';
 
@@ -13,21 +14,44 @@ setInterval(setTime, 1000);
 import _ from './weather';
 /**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
 export let todos = loadTodos();
+export let focus = [];
 renderTodos(todos);
-
 
 document.querySelector('#new-todo').addEventListener('keypress', function (e) {
     // e.preventDefault()
     
     if (e.keyCode === 13 || e.which ===13)
     {
-        todos.push({
-            id: uuidv4(),
-            text: e.target.value,
-            completed: false
-        })
-        saveTodos(todos);
-        renderTodos(todos);
+        if (e.target.value != '')
+        {
+            todos.push({
+                id: uuidv4(),
+                text: e.target.value,
+                completed: false
+            });
+            saveTodos(todos);
+            renderTodos(todos);
+        }
+
+        e.target.value = '';
+    }
+});
+
+document.querySelector('#focus').addEventListener('keypress', function (e) {
+    // e.preventDefault()
+    
+    if (e.keyCode === 13 || e.which ===13)
+    {
+        if (e.target.value != '')
+        {
+            focus.push({
+                id: uuidv4(),
+                text: e.target.value,
+                completed: false
+            });
+            console.log(focus);
+        }
+
         e.target.value = '';
     }
 });
