@@ -2,7 +2,7 @@ require('../styles/app.css')
 import uuidv4 from 'uuid/v4';
 import { getLocation } from './weather';
 import { renderTodos, saveTodos, loadTodos } from './todos';
-import { renderFocus } from './focus';
+import { renderFocus, loadFocus } from './focus';
 //sara:comment out following line
 // import * as setTime from './clock';
 
@@ -39,23 +39,8 @@ document.querySelector('#new-todo').addEventListener('keypress', function (e) {
     }
 });
 
-document.querySelector('#focus').addEventListener('keypress', function (e) {
-    // e.preventDefault()
-    
-    if (e.keyCode === 13 || e.which ===13)
-    {
-        if (e.target.value != '')
-        {
-            focus.push({
-                id: uuidv4(),
-                text: e.target.value,
-                completed: false
-            });
-            console.log(focus);
-        }
+/**----------------------------------------------------------- /TODOS ------------------------------------------------------- **/
 
-        e.target.value = '';
-    }
-});
-
-/**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
+/**----------------------------------------------------------- FOCUS ------------------------------------------------------- **/
+    document.querySelector('#focus-container').addEventListener('load', renderFocus(focus));
+/**----------------------------------------------------------- /FOCUS ------------------------------------------------------- **/

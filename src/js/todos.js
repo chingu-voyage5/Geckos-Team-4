@@ -51,6 +51,12 @@ const generateTodoDOM = todo =>
 
     checkbox.setAttribute('type', 'checkbox');
     checkbox.checked = todo.completed;
+
+    if (checkbox.checked)
+    {
+        todoText.classList.toggle('completed');
+    }
+
     todoEl.appendChild(checkbox);
 
     checkbox.addEventListener('change', () => 

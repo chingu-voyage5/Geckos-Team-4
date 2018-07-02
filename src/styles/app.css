@@ -76,7 +76,7 @@ body {
   padding-left: 15%;
 }
 
-input[type=text] {
+input {
   outline: none;
   border: none;
   border-bottom: 2px solid white;
