@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">    
 </head>
 <body>
-    <div class="grid">
+    <div class="grid" id="particles-js">
 
         <div class="linkArea">
             <div class='header__container'>
@@ -43,7 +43,9 @@
             <input type="text" class="focusText">
         </div>
 
-        <div class="span-col-3">Photo Credit</div>
+        <div class="span-col-3">
+            <button id="backgroundButton">randomize</button>
+        </div>
 
         <div class="span-col-3 quote__container">
             <span id="quote">“Each morning we are born again. What we do today is what matters most.”</span>
@@ -53,7 +55,8 @@
             <div id="todos"></div>
             <input type="text" placeholder="New Todo" id="new-todo" />
         </div>
-
+        
     </div>
+    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
 </body>
 </html>

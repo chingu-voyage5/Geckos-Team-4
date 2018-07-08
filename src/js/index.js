@@ -7,6 +7,9 @@ import { renderTodos, saveTodos, loadTodos } from './todos';
 
 import { setTime } from './clock';
 import { randomizeQuote } from './quote';
+import { particlesFunction } from './particles';
+// import { changeBackground } from './background';
+import { addListeners } from './background';
 
 document.onload = getLocation();  //weather widget
 //sara:comment out following line
@@ -14,7 +17,10 @@ document.onload = getLocation();  //weather widget
 //sara:added following line
 setInterval(setTime, 1000);
 
+addListeners();
 randomizeQuote();
+// particlesFunction();
+// changeBackground();
 
 /**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
 export let todos = loadTodos();
