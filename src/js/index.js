@@ -6,12 +6,15 @@ import { renderTodos, saveTodos, loadTodos } from './todos';
 // import * as setTime from './clock';
 
 import { setTime } from './clock';
+import { randomizeQuote } from './quote';
 
 document.onload = getLocation();  //weather widget
 //sara:comment out following line
 // console.log(`I imported ${num} from another module!! ${clock}` );
 //sara:added following line
 setInterval(setTime, 1000);
+
+randomizeQuote();
 
 /**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
 export let todos = loadTodos();
