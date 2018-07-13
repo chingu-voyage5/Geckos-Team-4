@@ -25,6 +25,10 @@ body {
   margin: auto;
 }
 
+#userText {
+  justify-self: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -124,9 +128,10 @@ input[type=text] {
 	font-family:Arial;
 	font-size:12px;
 	font-weight:bold;
-	padding:2px 16px;
+	padding:4px 12px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+  text-shadow:0px 1px 0px #ffffff;
+  
 }
 
 #backgroundButton:hover {
@@ -137,10 +142,16 @@ input[type=text] {
 	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
 	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
-	background-color:#f6f6f6;
+  background-color:#f6f6f6;  
+}
+
+.backgroundButtonSection {
+  justify-self: start;
+  padding-left: 10%;
+  padding-top: 10%;
 }
 
 #backgroundButton:active {
 	position:relative;
-	top:1px;
+  top:1px;  
 }
