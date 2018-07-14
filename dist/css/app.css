@@ -1,99 +1,101 @@
-*
-{
-    box-sizing: border-box;
-}
-
-html
-{
-    height: 100%;
-    width: 100%;
-}
-
-body
-{
-    height: 100%;
-    background-image: url("https://momentumdash.com/backgrounds/08.jpg");
-    color: white;
-}
-
-input
-{
-  outline: none;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  border-bottom: 2px solid white;
+html,
+body {
+  margin: 0;
+  padding: 0;
   color: white;
-  font-size: 24px;
-  width: 30%;
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.header__container
-{
-    height: 10%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+body {
+  overflow: hidden;
+  /* background-image: url("https://momentumdash.com/backgrounds/08.jpg"); */
+  background-color: #5F9EA0;
 }
 
-.weather
-{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
-.content__container
-{
-    height: 80%;
-    width: 100%;
-    font-size: 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.centerText {
+  margin: auto;
 }
 
-.content__container .time
-{
-    font-size: 12rem;
-    margin-bottom: -60px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr 10fr 5fr 1fr;
+    height: 95%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    align-items : center;
+    justify-items: center;
+    /* border: 3px solid #FF0000; */
+}
+.span-col-6{grid-column: span 6 / auto;}
+
+.span-col-5{grid-column: span 5 / auto;}
+
+.span-col-9{grid-column: span 9 / auto;}
+
+.span-col-3{grid-column: span 3 / auto;}
+
+.span-col-2{grid-column: span 2 / auto;}
+
+.span-row-3{grid-row: span 3 / auto;}
+
+.todo-list {
+  max-height: 500px;
+  overflow: scroll;
 }
 
-.footer__container
-{
+.weather{
+  grid-column: 9;
+  grid-row: 1;
+  margin-top: 10px;
+  font-size: 18px;
   display: flex;
-  height: 10%;
-}
-
-.empty
-{
-  display: flex;
-  width: 33.33%;
-}
-
-.quote__container
-{
-  display: flex;
-  width: 33.34%;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.quote
-{
-    align-self: flex-end;
-    font-size: 18px;
+#weatherIcon,#temperature {
+  padding: 4px;
 }
 
-.todo__container
-{
-  display: flex;
-  width: 33.33%;
-  justify-content: flex-end;
+.location {
+  text-align: center;
+  width: 100%;
 }
 
-.todo
-{
-    align-self: flex-end;
-    font-size: 18px;
+.linkArea {
+  padding-left: 15%;
 }
+
+input[type=text] {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+}
+
+.focusText {
+  width: 100%;
+  overflow-x: visible;
+}
+.completed
+{
+    text-decoration: line-through;
+}
+
+.time {
+  font-size: 900%;
+}
+
+/*# sourceMappingURL=app.css.map*/

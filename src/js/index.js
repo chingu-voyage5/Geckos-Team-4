@@ -7,12 +7,21 @@ import { renderFocus, loadFocus, renderDifferentFocus } from './focus';
 // import * as setTime from './clock';
 
 import { setTime } from './clock';
+import { randomizeQuote } from './quote';
+import { particlesFunction } from './particles';
+// import { changeBackground } from './background';
+import { addListeners } from './background';
 
 document.onload = getLocation();  //weather widget
 //sara:comment out following line
 // console.log(`I imported ${num} from another module!! ${clock}` );
 //sara:added following line
 setInterval(setTime, 1000);
+
+addListeners();
+randomizeQuote();
+// particlesFunction();
+// changeBackground();
 
 /**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
 export let todos = loadTodos();
