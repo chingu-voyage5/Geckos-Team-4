@@ -25,10 +25,6 @@ body {
   margin: auto;
 }
 
-#userText {
-  justify-self: center;
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
