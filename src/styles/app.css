@@ -1,9 +1,9 @@
 html,
 body {
   margin: 0;
-  padding: 0;
+  padding: 0;    
   color: white;
-  height: 100%;
+  height: 100%;  
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -40,7 +40,14 @@ body {
 
 .span-col-5{grid-column: span 5 / auto;}
 
-.span-col-9{grid-column: span 9 / auto;}
+.span-col-9
+{
+  grid-column: span 9 / auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .span-col-3{grid-column: span 3 / auto;}
 
@@ -49,13 +56,13 @@ body {
 .span-row-3{grid-row: span 3 / auto;}
 
 .todo-list {
-  max-height: 500px;
+  max-height: 500px;  
   overflow: scroll;
 }
 
 .weather{
   grid-column: 9;
-  grid-row: 1;
+  grid-row: 1; 
   margin-top: 10px;
   font-size: 18px;
   display: flex;
@@ -76,19 +83,20 @@ body {
   padding-left: 15%;
 }
 
-input[type=text] {
+input {
   outline: none;
   border: none;
   border-bottom: 2px solid white;
-  background-color: transparent;
+  background-color: transparent; 
   color: white;
-  font-size: 24px;
+  font-size: 24px;  
 }
 
 .focusText {
   width: 100%;
   overflow-x: visible;
 }
+
 .completed
 {
     text-decoration: line-through;
