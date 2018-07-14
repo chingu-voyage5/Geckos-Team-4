@@ -6,27 +6,33 @@ const clearFocusDom = () =>
     document.querySelector('#focus-container').innerHTML = '';
 };
 
-const renderDifferentFocus = () =>
+export const renderDifferentFocus = () =>
 {
     document.querySelector('#focus-container').appendChild(differentFocusDom(focus));
 };
 
-const toggleFocus = id => {
-    const el = focus.find(focus => {
+const toggleFocus = id => 
+{
+    const el = focus.find(focus => 
+    {
         return focus.id === id;
     });
 
-    if (el !== undefined) {
+    if (el !== undefined) 
+    {
         focus.completed = !focus.completed;
     }
 }
 
-const removeFocus = id => {
-    const focusIndex = focus.findIndex(el => {
+const removeFocus = id => 
+{
+    const focusIndex = focus.findIndex(el => 
+    {
         return el.id === id;
     });
 
-    if (focusIndex > -1) {
+    if (focusIndex > -1) 
+    {
         focus.splice(focusIndex, 1);
     }
 }
@@ -43,16 +49,18 @@ const differentFocusDom = focus =>
     checkbox.setAttribute('type', 'checkbox');
     checkbox.checked = focus.completed;
 
-    if (checkbox.checked) {
+    if (checkbox.checked) 
+    {
         differentFocusText.classList.toggle('completed');
     }
 
     differentFocusEl.appendChild(today);
     differentFocusEl.appendChild(checkbox);
 
-    checkbox.addEventListener('change', () => {
+    checkbox.addEventListener('change', () => 
+    {
         toggleFocus(focus[0].id);
-        //saveFocus(focus);
+        saveFocus(focus);
         clearFocusDom();
         renderDifferentFocus();
     }); 
@@ -62,9 +70,10 @@ const differentFocusDom = focus =>
 
     removeButton.textContent = 'x';
     differentFocusEl.appendChild(removeButton);
-    removeButton.addEventListener('click', () => {
+    removeButton.addEventListener('click', () => 
+    {
         removeFocus(focus[0].id);
-        //saveFocus(focus);
+        saveFocus(focus);
         clearFocusDom();
         renderFocus(focus);
     });
@@ -84,34 +93,40 @@ export const renderFocus = focus =>
     document.querySelector('#focus-container').appendChild(focusDisplay);
     document.querySelector('#focus-container').appendChild(focusInput);
 
-    focusInput.addEventListener('keypress', function (e) {
-
-        if (e.keyCode === 13 || e.which === 13) {
-            if (e.target.value != '') {
+    focusInput.addEventListener('keypress', function (e) 
+    {
+        if (e.keyCode === 13 || e.which === 13) 
+        {
+            if (e.target.value != '') 
+            {
                 focus.push({
                     id: uuidv4(),
                     text: e.target.value,
                     completed: false
                 });
                 clearFocusDom();
-                //saveFocus(focus);
+                saveFocus(focus);
                 renderDifferentFocus();
             }
         }
     });
 };
 
-export const loadFocus = () => {
+export const loadFocus = () => 
+{
     const focusJSON = localStorage.getItem('focus');
 
-    if (focusJSON !== null) {
+    if (focusJSON !== null) 
+    {
         return JSON.parse(focusJSON);
     }
-    else {
+    else 
+    {
         return [];
     }
 };
 
-export const saveFocus = focus => {
+export const saveFocus = focus => 
+{
     localStorage.setItem('focus', JSON.stringify(focus));
 };

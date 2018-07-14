@@ -40,7 +40,14 @@ body {
 
 .span-col-5{grid-column: span 5 / auto;}
 
-.span-col-9{grid-column: span 9 / auto;}
+.span-col-9
+{
+  grid-column: span 9 / auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .span-col-3{grid-column: span 3 / auto;}
 
