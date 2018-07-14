@@ -1,3 +1,7 @@
+/** {
+  border: 3px solid #FF0000;
+}*/
+
 html,
 body {
   margin: 0;
@@ -34,7 +38,6 @@ body {
     padding-top: 1%;
     align-items : center;
     justify-items: center;
-    /* border: 3px solid #FF0000; */
 }
 .span-col-6{grid-column: span 6 / auto;}
 
@@ -55,25 +58,29 @@ body {
 
 .weather{
   grid-column: 9;
-  grid-row: 1;
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 8px;
 }
 
 #weatherIcon,#temperature {
-  padding: 4px;
+  padding-right: 5%;
 }
 
 .location {
   text-align: center;
   width: 100%;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .linkArea {
-  padding-left: 15%;
+  /*padding-left: 5%;*/
+  text-align: left;
+  vertical-align: top;
 }
 
 input[type=text] {
@@ -82,7 +89,16 @@ input[type=text] {
   border-bottom: 2px solid white;
   background-color: transparent;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
+}
+
+#searchInput {
+    border-bottom: none;
+}
+
+#search {
+  border-bottom: 2px solid white;
+  font-size: 20px;
 }
 
 .focusText {

@@ -13,6 +13,18 @@ document.onload = getLocation();  //weather widget
 //sara:added following line
 setInterval(setTime, 1000);
 
+// search widget
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener("keypress",function(event) {
+    let query = `https://www.google.com/search?q=${searchInput.value}`;
+    query = query.replace(/ /g, "%20");
+    if (event.keyCode === 13 || event.which ===13){
+        window.open(query, '_blank');
+        searchInput.value = ``;
+    }
+});
+
 /**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
 export let todos = loadTodos();
 renderTodos(todos);
