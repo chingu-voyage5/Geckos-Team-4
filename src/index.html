@@ -6,20 +6,18 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">    
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
 </head>
 <body>
     <div class="grid" id="particles-js">
 
-        <div class="linkArea">
-            <div class='header__container'>
-                <div>
-                    <button>Links</button>
-                    <span><i class="fas fa-search"></i></span>
-                    <input type="text">
-                </div>
-            </div>
+        <div class="linkArea span-col-2">
+                <!-- <button>Links</button> -->
+                <span id="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput">
+                </span>
         </div>
 
         <div class="weather">
@@ -55,7 +53,7 @@
             <div id="todos"></div>
             <input type="text" placeholder="New Todo" id="new-todo" />
         </div>
-        
+
     </div>
     <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
 </body>

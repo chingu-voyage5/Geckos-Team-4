@@ -1,0 +1,23 @@
+{
+    // required by all chrome extensions
+    "name": "GeckoTabs",
+    "version": "1.0",
+    "manifest_version": 2,
+    "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+    // optional
+    "description": "better momentum tab tool",
+    // add icons later
+
+    "browser_action": {
+        "default_title": "GeckoTabs"
+    },
+
+    "permissions": [
+        "activeTab", "tabs", "geolocation"
+    ]
+}

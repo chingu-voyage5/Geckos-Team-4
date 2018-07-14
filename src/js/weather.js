@@ -1,6 +1,6 @@
- console.log(`weather module loaded`);
+console.log(`weather module loaded`);
 
- const defaultCities = [`Miami`, `New York`, `Los Angeles`, `Chicago`];
+const defaultCities = [`Miami`, `New York`, `Los Angeles`, `Chicago`];
 
 const location = document.querySelector('.location');
 const temperature = document.getElementById('temperature');
@@ -67,8 +67,9 @@ function displayWeather() {
 
     response = JSON.parse(weatherRequest.responseText);
     //console.log(response);
-    location.innerHTML = `${response.name}, ${response.sys["country"]} `;
-    temperature.innerHTML = `${(response.main["temp"]).toString().slice(0,2)}°F`; //truncate decimal part
+    // location.innerHTML = `${response.name}, ${response.sys["country"]} `;
+    location.innerHTML = response.name.toUpperCase();
+    temperature.innerHTML = `${(response.main["temp"]).toString().slice(0,2)}°`; //truncate decimal part
     displayWeatherIcon();
 
 }

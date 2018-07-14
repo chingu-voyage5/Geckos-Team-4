@@ -1,9 +1,13 @@
+/** {
+  border: 3px solid #FF0000;
+}*/
+
 html,
 body {
   margin: 0;
-  padding: 0;    
+  padding: 0;
   color: white;
-  height: 100%;  
+  height: 100%;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -34,7 +38,6 @@ body {
     padding-top: 1%;
     align-items : center;
     justify-items: center;
-    /* border: 3px solid #FF0000; */
 }
 .span-col-6{grid-column: span 6 / auto;}
 
@@ -56,40 +59,55 @@ body {
 .span-row-3{grid-row: span 3 / auto;}
 
 .todo-list {
-  max-height: 500px;  
+  max-height: 500px;
   overflow: scroll;
 }
 
 .weather{
   grid-column: 9;
-  grid-row: 1; 
+  grid-row: 1;
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 8px;
 }
 
 #weatherIcon,#temperature {
-  padding: 4px;
+  padding-right: 5%;
 }
 
 .location {
   text-align: center;
   width: 100%;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .linkArea {
-  padding-left: 15%;
+  /*padding-left: 5%;*/
+  text-align: left;
+  vertical-align: top;
 }
 
 input {
   outline: none;
   border: none;
   border-bottom: 2px solid white;
-  background-color: transparent; 
+  background-color: transparent;
   color: white;
-  font-size: 24px;  
+  font-size: 24px;
+}
+
+#searchInput {
+    border-bottom: none;
+    font-size: 20px;
+}
+
+#search {
+  border-bottom: 2px solid white;
+  font-size: 20px;
 }
 
 .focusText {
@@ -107,7 +125,7 @@ input {
 }
 
 /* #particles-js{
-  background:firebrick;  
+  background:firebrick;
 } */
 
 #backgroundButton {
@@ -135,7 +153,7 @@ input {
 	padding:4px 12px;
 	text-decoration:none;
   text-shadow:0px 1px 0px #ffffff;
-  
+
 }
 
 #backgroundButton:hover {
@@ -146,7 +164,7 @@ input {
 	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
 	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
-  background-color:#f6f6f6;  
+  background-color:#f6f6f6;
 }
 
 .backgroundButtonSection {
@@ -157,5 +175,5 @@ input {
 
 #backgroundButton:active {
 	position:relative;
-  top:1px;  
+  top:1px;
 }
