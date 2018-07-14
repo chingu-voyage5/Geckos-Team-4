@@ -6,18 +6,20 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-</head>
+<link href="css/app.css" rel="stylesheet"></head>
 <body>
-    <div class="grid" id="particles-js">
+    <div class="grid">
 
-        <div class="linkArea span-col-2">
-                <!-- <button>Links</button> -->
-                <span id="search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput">
-                </span>
+        <div class="linkArea">
+            <div class='header__container'>
+                <div>
+                    <button>Links</button>
+                    <span><i class="fas fa-search"></i></span>
+                    <input type="text">
+                </div>
+            </div>
         </div>
 
         <div class="weather">
@@ -33,20 +35,18 @@
                 <span id="digit2"></span>
             </span>
             <br />
-            <h2 id="userText">Good <span id="timeGreetingText"></span>, User</h2>
+            <h2>Good <span id="timeGreetingText"></span>, User</h2>
         </div>
 
-        <div class="span-col-9 focus" id="focus-container">
-            <!--<h3 id="focus-display">What is your main focus for today?</h3>
-            <input type="text" class="focusText" id="focus"> -->
+        <div class="span-col-9 focus">
+            <h3>What is your main focus for today?</h3>
+            <input type="text" class="focusText">
         </div>
 
-        <div class="span-col-3 backgroundButtonSection">
-            <button id="backgroundButton">randomize</button>
-        </div>
+        <div class="span-col-3">Photo Credit</div>
 
         <div class="span-col-3 quote__container">
-            <span id="quote">“Each morning we are born again. What we do today is what matters most.”</span>
+            <span class="quote">“Each morning we are born again. What we do today is what matters most.”</span>
         </div>
 
         <div class="todo_modal">
@@ -55,6 +55,5 @@
         </div>
 
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
-</body>
+<script type="text/javascript" src="js/bundle.js"></script></body>
 </html>

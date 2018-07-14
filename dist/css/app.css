@@ -1,0 +1,101 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  /* background-image: url("https://momentumdash.com/backgrounds/08.jpg"); */
+  background-color: #5F9EA0;
+}
+
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.centerText {
+  margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr 10fr 5fr 1fr;
+    height: 95%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    align-items : center;
+    justify-items: center;
+    /* border: 3px solid #FF0000; */
+}
+.span-col-6{grid-column: span 6 / auto;}
+
+.span-col-5{grid-column: span 5 / auto;}
+
+.span-col-9{grid-column: span 9 / auto;}
+
+.span-col-3{grid-column: span 3 / auto;}
+
+.span-col-2{grid-column: span 2 / auto;}
+
+.span-row-3{grid-row: span 3 / auto;}
+
+.todo-list {
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.weather{
+  grid-column: 9;
+  grid-row: 1;
+  margin-top: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#weatherIcon,#temperature {
+  padding: 4px;
+}
+
+.location {
+  text-align: center;
+  width: 100%;
+}
+
+.linkArea {
+  padding-left: 15%;
+}
+
+input[type=text] {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+}
+
+.focusText {
+  width: 100%;
+  overflow-x: visible;
+}
+.completed
+{
+    text-decoration: line-through;
+}
+
+.time {
+  font-size: 900%;
+}
+
+/*# sourceMappingURL=app.css.map*/
