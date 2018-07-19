@@ -12,7 +12,7 @@ let hours = now.getHours();
           return (hours - 12);
       } else {
           document.getElementById("timeGreetingText").innerHTML = " Morning";
-          return ("0" + hours.toString());
+          return (hours.toString());
       }
   }
   
@@ -24,12 +24,12 @@ let hours = now.getHours();
           document.getElementById("digit1").innerHTML = convertTo12(hours);
           // console.log('length less than 2');        
       } else {
-          document.getElementById("digit1").innerHTML = "0" + convertTo12(hours).toString();        
+          document.getElementById("digit1").innerHTML =  convertTo12(hours).toString();        
           // console.log('length more than 1');
       }
       
       if (minutes.toString().length < 2) {
-          document.getElementById("digit2").innerHTML =  + "0" + minutes.toString();
+          document.getElementById("digit2").innerHTML = minutes.toString();
       } else {
           document.getElementById("digit2").innerHTML = minutes;
       }

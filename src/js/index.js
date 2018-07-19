@@ -8,9 +8,11 @@ import { renderFocus, loadFocus, renderDifferentFocus } from './focus';
 
 import { setTime } from './clock';
 import { randomizeQuote } from './quote';
-import { particlesFunction } from './particles';
+//import { particlesFunction } from './particles';
+import 'particles.js/particles';
+const particlesJS = window.particlesJS;
 // import { changeBackground } from './background';
-import { addListeners } from './background';
+//import { addListeners } from './background';
 
 document.onload = getLocation();  //weather widget
 //sara:comment out following line
@@ -32,9 +34,9 @@ searchInput.addEventListener("keypress",function(event) {
 });
 
 
-addListeners();
+// addListeners();
 randomizeQuote();
-// particlesFunction();
+
 // changeBackground();
 
 /**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
@@ -73,3 +75,77 @@ document.querySelector('#new-todo').addEventListener('keypress', function (e)
         renderDifferentFocus();
     }
 /**----------------------------------------------------------- /FOCUS ------------------------------------------------------- **/
+
+/**----------------------------------------------------------- PARTICLES JS ------------------------------------------------------- **/
+particlesJS('particles-js',{
+    "particles":{
+      "number":{
+        "value":400
+      },
+      "color":{
+        "value":"#2FFEB0"
+      },
+      "shape":{
+        "type":"circle",
+        "stroke":{
+          "width":1,
+          "color":"#ccc"
+        },
+        "image":{
+          "src":"http://www.iconsdb.com/icons/preview/white/contacts-xxl.png"
+        }
+      },
+      "opacity":{
+        "value":0.9,
+        "random":true,
+        "anim":{
+          "enable":false,
+          "speed":1
+        }
+      },
+      "size":{
+        "value": 5,
+        "random":false,
+        "anim":{
+          "enable": false,
+          "speed":50
+        }
+      },
+      "line_linked":{
+        "enable": true,
+        "distance": 120,
+        "color":"#fff",
+        "width":1
+      },
+      "move":{
+        "enable":true,
+        "speed":2,
+        "direction":"none",
+        "straight":false
+      }
+    },
+    "interactivity":{
+      "events":{
+        "onhover":{
+          "enable":true,
+          "mode":"repulse"
+        },
+        "onclick":{
+          "enable": true,
+          "mode":"push"
+        }
+      },
+      "modes":{
+        "repulse":{
+          "distance":50,
+          "duration":0.4
+        },
+        "bubble":{
+          "distance":100,
+          "size":10
+        }
+      }
+    }
+  }
+)
+/**----------------------------------------------------------- /PARTICLES JS ------------------------------------------------------- **/

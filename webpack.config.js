@@ -43,7 +43,7 @@ module.exports =
                     fallback: 'style-loader',
                     use: ['css-loader']
                 })
-            }
+            },
         ]
     },
     devtool: 'source-map'
