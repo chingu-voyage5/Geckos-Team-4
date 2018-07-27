@@ -149,3 +149,18 @@ particlesJS('particles-js',{
   }
 )
 /**----------------------------------------------------------- /PARTICLES JS ------------------------------------------------------- **/
+
+/**----------------------------------------------------------- TODO MODAL ------------------------------------------------------- **/
+document.querySelector('.todo_button').addEventListener('click', function()
+{
+  const todo_modal = document.querySelector('.todo_modal');
+  if (todo_modal.style.display === 'none')
+  {
+    todo_modal.style.display = 'grid';
+  }
+  else
+  {
+    todo_modal.style.display = 'none';
+  }
+});
+/**----------------------------------------------------------- /TODO MODAL ------------------------------------------------------- **/

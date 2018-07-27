@@ -9,6 +9,7 @@ body {
   padding: 0;
   color: white;
   height: 100%;
+  width: 100%;
   font-family: 'Quicksand', sans-serif;
   text-shadow: 4px 4px 7px rgb(0, 0, 0);
 }
@@ -17,6 +18,7 @@ body {
   overflow: hidden;
   background-color: rgb(33,36,50);
   height: 100%;
+  width: 100%;
 }
 
 .grid {
@@ -28,15 +30,16 @@ body {
     justify-items: center;
 }
 
-.linkArea
+.linkAreaContainer
 {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-self: start;
+  align-self: start;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .weather
@@ -45,6 +48,10 @@ body {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
+  justify-self: end;
+  align-self: start;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .content__container
@@ -53,6 +60,10 @@ body {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo_modal
@@ -61,6 +72,20 @@ body {
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  align-self: end;
+  border: 1px solid gray;
+  background: gray;
+  border-radius: 5px;
+}
+
+.todo_button
+{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  align-self: start;
+  margin-top: 5px;
 }
 
 .quote__container
