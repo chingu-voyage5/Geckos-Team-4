@@ -1,6 +1,7 @@
-/** {
-  border: 3px solid #FF0000;
-}*/
+*
+{
+  box-sizing: border-box;
+}
 
 html,
 body {
@@ -8,80 +9,91 @@ body {
   padding: 0;
   color: white;
   height: 100%;
+  width: 100%;
   font-family: 'Quicksand', sans-serif;
   text-shadow: 4px 4px 7px rgb(0, 0, 0);
 }
 
 body {
   overflow: hidden;
-  /* background-image: url("https://momentumdash.com/backgrounds/08.jpg"); */
   background-color: rgb(33,36,50);
-}
-
-.centerText {
-  margin: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: 1fr 10fr 5fr 1fr;
-    height: 95%;
-    padding-bottom: 1%;
-    padding-top: 1%;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    height: 100%;
     align-items : center;
     justify-items: center;
 }
-.span-col-6{grid-column: span 6 / auto;}
 
-.span-col-5{grid-column: span 5 / auto;}
-
-.span-col-9
+.linkAreaContainer
 {
-  grid-column: span 9 / auto;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-self: start;
+  align-self: start;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.weather
+{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-self: end;
+  align-self: start;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.content__container
+{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.span-col-3{grid-column: span 3 / auto;}
-
-.span-col-2{grid-column: span 2 / auto;}
-
-.span-row-3{grid-row: span 3 / auto;}
-
-.todo-list {
-  max-height: 500px;
-  overflow: scroll;
+.todo_modal
+{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: end;
+  border: 1px solid gray;
+  background: gray;
+  border-radius: 5px;
 }
 
-.weather{
-  grid-column: 9;
-  grid-row: 1;
-  margin-top: 10px;
-  font-size: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 8px;
+.todo_button
+{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  align-self: start;
+  margin-top: 5px;
 }
 
-#weatherIcon,#temperature {
-  padding-right: 5%;
-}
-
-.location {
-  text-align: center;
-  width: 100%;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.linkArea {
-  /*padding-left: 5%;*/
-  text-align: left;
-  vertical-align: top;
+.quote__container
+{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
 input {
@@ -116,58 +128,6 @@ input {
 .time {
   font-size: 900%;
 }
-
-/*
-#backgroundButton {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
-	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
-	background-color:#ffffff;
-	-moz-border-radius:4px;
-	-webkit-border-radius:px;
-	border-radius:4px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
-	font-size:12px;
-	font-weight:bold;
-	padding:4px 12px;
-	text-decoration:none;
-  text-shadow:0px 1px 0px #ffffff;
-
-}
-
-#backgroundButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
-	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
-  background-color:#f6f6f6;
-}
-
-.backgroundButtonSection {
-  justify-self: start;
-  padding-left: 10%;
-  padding-top: 10%;
-}
-
-#backgroundButton:active {
-	position:relative;
-  top:1px;
-}
-*/
 
 canvas {
   display:block;
