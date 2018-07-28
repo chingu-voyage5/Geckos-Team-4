@@ -1,6 +1,6 @@
 {
     // required by all chrome extensions
-    "name": "GeckoTabs",
+    "name": "Raftaar",
     "version": "1.0",
     "manifest_version": 2,
     "background": {
@@ -10,12 +10,17 @@
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
 
     // optional
-    "description": "better momentum tab tool",
+    "description": "Better Momentum Tab Tool",
     // add icons later
 
     "browser_action": {
-        "default_title": "GeckoTabs"
+        "default_title": "Raftaar"
     },
+
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png" },
 
     "permissions": [
         "activeTab", "tabs", "geolocation"

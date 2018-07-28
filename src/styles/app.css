@@ -40,6 +40,18 @@ body {
   align-self: start;
   margin-left: 10px;
   margin-top: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#searchInput {
+    border-bottom: none;
+    font-size: 20px;
+}
+
+#search {
+  border-bottom: 2px solid white;
+  font-size: 20px;
 }
 
 .weather
@@ -52,20 +64,138 @@ body {
   align-self: start;
   margin-right: 10px;
   margin-top: 10px;
-}
-
-.content__container
-{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  font-size: 13px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
+.weather:hover {
+  cursor: pointer;
+}
+
+
+#weatherIcon, #temperature {
+  padding-right: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  width: calc(50% - 3px);
+}
+
+/*Popup styling:Popup has two containers-popupMain and days*/
+.weatherPopup {
+  visibility: hidden;
+  grid-column: 3/4;
+  z-index: 1;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  padding-top: 0;
+  position: absolute;
+  top: 10%;
+  right:10px;
+  text-shadow: none;
+  text-align: center;
+  font-size: 14px;
+  /*flex stuff*/
+  padding: 8px;
+  width: 115%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*days container*/
+#days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: 20%;
+}
+.day:hover {
+  background-color: #eee;
+  border-radius: 4px;
+}
+/*Main Container*/
+#popupMain {
+  width: 100%;
+  border-bottom: thin;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+#loc {
+  font-size: 20px;
+  width: 90%;
+  font-weight: bold;
+  color: #222;
+}
+
+#tempUnit {
+  width: 10%;
+  font-weight: thin;
+  color: #222;
+}
+
+#tempC:hover {
+  font-weight: bold;
+}
+
+#tempF:hover {
+  font-weight: bold;
+}
+/*only for forecast*/
+#fullDayName {
+  font-size: 14px;
+  color: #555;
+}
+
+#desc {
+  width: 100%;
+}
+#wIcon {
+  font-size: 48px;
+  width: calc(50% - 30px);
+  padding: 15px;
+  text-align: right;
+}
+
+#temp {
+  font-size: 50px;
+  width: 50%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+/*only for forecast*/
+#templow {
+  font-size: 34px;
+  color: #555;
+}
+
+.prominent {
+  font-weight: bolder;
+}
+/*for popup arrow https://www.w3schools.com/css/tryit.asp?filename=trycss_tooltip_arrow_bottom*/
+.weather .weatherPopup::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 85%;
+  margin-left: -5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.show {
+  visibility: visible;
+}
+/*/Popup styling */
 .todo_modal
 {
   grid-column-start: 3;
@@ -88,6 +218,19 @@ body {
   margin-top: 5px;
 }
 
+.content__container
+{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .quote__container
 {
   grid-column-start: 2;
@@ -105,15 +248,6 @@ input {
   font-size: 24px;
 }
 
-#searchInput {
-    border-bottom: none;
-    font-size: 20px;
-}
-
-#search {
-  border-bottom: 2px solid white;
-  font-size: 20px;
-}
 
 .focusText {
   width: 100%;
