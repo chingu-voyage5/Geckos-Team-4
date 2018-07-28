@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>New Tab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
@@ -12,7 +12,6 @@
 <body>
     <div class="grid" id="particles-js">
         <div class="linkArea span-col-2">
-                <!-- <button>Links</button> -->
                 <span id="search">
                     <i class="fas fa-search"></i>
                     <input type="text" id="searchInput">
@@ -23,6 +22,23 @@
             <div id="weatherIcon"></div>
             <div id="temperature"></div>
             <div class="location"></div>
+
+            <div class="weatherPopup span-col-3">
+                <div id="popupMain">
+                    <div id="loc"></div>
+                    <div id="tempUnit"><span id="tempC">°C</span>/<span id="tempF" class="prominent">°F</span></div>
+                    <div id="desc"></div>
+                    <div id="wIcon"></div>
+                    <div id="temp"></div>
+                </div>
+                <div id="days">
+                    <div id="day0" class="day"></div>
+                    <div id="day1" class="day"></div>
+                    <div id="day2" class="day"></div>
+                    <div id="day3" class="day"></div>
+                    <div id="day4" class="day"></div>
+                </div>
+            </div>
         </div>
 
         <div class="span-col-9 centerText content__container css_sucks">
