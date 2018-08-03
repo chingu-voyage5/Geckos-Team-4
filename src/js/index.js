@@ -113,7 +113,7 @@ particlesJS('particles-js',{
         "random":false,
         "anim":{
           "enable": false,
-          "speed":50
+          "speed":40
         }
       },
       "line_linked":{

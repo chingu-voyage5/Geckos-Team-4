@@ -258,7 +258,7 @@ body {
 }
 
 .fade {
-  animation: fadeIn 7s;
+  animation: fadeIn 6s;
 }
   @keyframes fadeIn {
     from {
