@@ -7,7 +7,8 @@ import { renderFocus, loadFocus, renderDifferentFocus } from './focus';
 // import * as setTime from './clock';
 
 import { setTime } from './clock';
-import { randomizeQuote } from './quote';
+import { loadUsername, changeUsername } from './username';
+import { getQuote } from './quote';
 //import { particlesFunction } from './particles';
 import 'particles.js/particles';
 const particlesJS = window.particlesJS;
@@ -35,8 +36,12 @@ searchInput.addEventListener("keypress",function(event) {
 
 
 // addListeners();
-randomizeQuote();
-
+// randomizeQuote();
+loadUsername();
+changeUsername();
+$(document).ready(function() {    
+  getQuote();
+});
 // changeBackground();
 
 /**----------------------------------------------------------- TODOS ------------------------------------------------------- **/
@@ -80,10 +85,10 @@ document.querySelector('#new-todo').addEventListener('keypress', function (e)
 particlesJS('particles-js',{
     "particles":{
       "number":{
-        "value":400
+        "value":80
       },
       "color":{
-        "value":"#2FFEB0"
+        "value":"#00bee8"
       },
       "shape":{
         "type":"circle",
@@ -104,7 +109,7 @@ particlesJS('particles-js',{
         }
       },
       "size":{
-        "value": 5,
+        "value": 2,
         "random":false,
         "anim":{
           "enable": false,
@@ -119,7 +124,7 @@ particlesJS('particles-js',{
       },
       "move":{
         "enable":true,
-        "speed":2,
+        "speed":1,
         "direction":"none",
         "straight":false
       }
@@ -127,11 +132,11 @@ particlesJS('particles-js',{
     "interactivity":{
       "events":{
         "onhover":{
-          "enable":true,
+          "enable":false,
           "mode":"repulse"
         },
         "onclick":{
-          "enable": true,
+          "enable": false,
           "mode":"push"
         }
       },
@@ -164,3 +169,19 @@ document.querySelector('.todo_button').addEventListener('click', function()
   }
 });
 /**----------------------------------------------------------- /TODO MODAL ------------------------------------------------------- **/
+/**----------------------------------------------------------- /USERNAME JS ------------------------------------------------------- **/
+document.getElementById("usernameInput").addEventListener("keydown", function(e) {
+  //alert("enter key pressed");
+  let key = e.which || e.keyCode;
+  if (key == 13) {
+      // document.getElementById("username").innerText = document.getElementById("usernameInput").value;      
+      document.getElementById("usernameInput").style.visibility = "hidden";
+
+      let currentUsername = document.getElementById("usernameInput").value; 
+      localStorage.setItem("username", currentUsername);
+      let updatedUsername =  localStorage.getItem("username");
+      document.getElementById("username").innerText = updatedUsername;
+      document.getElementById("usernameInput").value = "";
+  }
+});
+/**----------------------------------------------------------- /USERNAME JS ------------------------------------------------------- **/

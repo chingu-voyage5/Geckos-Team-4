@@ -17,3 +17,37 @@ export function randomizeQuote() {
 
     // Math.floor((Math.random() * 10) + 1); -> return a random number between 1 and 10
 }
+
+// $(document).ready(function() {    
+
+//     function getQuote() {
+//         let url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+//         $.getJSON(url, function(data){
+//             console.log(data.quoteText);
+//             console.log(data.quoteAuthor);
+
+//             document.getElementById('quote').innerHTML = data.quoteText;
+//             document.getElementById('author').innerHTML = data.quoteAuthor;
+//         })        
+//     }
+//     getQuote();
+// });
+
+export function getQuote() {
+    let url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+    $.getJSON(url, function(data){
+        console.log(data.quoteText);
+        console.log(data.quoteAuthor);
+
+        if (data.quoteText.includes('"')){
+            alert("contains quotes");
+            getQuote();
+        }
+
+        document.getElementById('quote').innerHTML = data.quoteText;
+        if (data.quoteAuthor == "") {
+            alert("no author");
+        }
+        document.getElementById('author').innerHTML = "- " + data.quoteAuthor;
+    })        
+}

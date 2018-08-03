@@ -54,6 +54,15 @@ body {
   font-size: 20px;
 }
 
+#username:hover {
+  cursor: pointer;
+}
+
+#usernameInput {
+  visibility: hidden;
+  text-align: center;
+}
+
 .weather
 {
   grid-column-start: 3;
@@ -237,6 +246,22 @@ body {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
+}
+
+#quote {
+  text-align: center;
+}
+
+#author {
+  text-align: center;
+  font-style: italic;
+}
+
+.fade {
+  /* opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out; */
 }
 
 input {
