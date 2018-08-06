@@ -7,7 +7,7 @@ export function getQuote() {
     $.getJSON(url, function(data){
         // console.log(data.quoteText);
         // console.log(data.quoteAuthor);
-
+        
         if (data.quoteText.includes('"')){
             console.log("contains quotes");
             getQuote();            

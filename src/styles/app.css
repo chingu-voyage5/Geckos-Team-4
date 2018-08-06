@@ -260,15 +260,15 @@ body {
 .fade {
   animation: fadeIn 6s;
 }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    
-    to {
-      opacity: 1;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  
+  to {
+    opacity: 1;
+  }
+}
 
 
 
