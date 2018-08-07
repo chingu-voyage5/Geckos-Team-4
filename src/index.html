@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Tab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>    
+    
+</head>
+<body>
+    <div class="grid" id="particles-js">
+        <div class="linkAreaContainer">
+                <span id="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput">
+                </span>
+        </div>
+
+        <div class="weather">
+            <div id="wIT">
+                <span id="weatherIcon"></span>
+                <span id="temperature"></span>
+            </div>
+            <div class="location"></div>
+
+            <div class="weatherPopup">
+                <div id="popupMain">
+                    <div id="loc"></div>
+                    <div id="tempUnit"><span id="tempC">°C</span>/<span id="tempF" class="prominent">°F</span></div>
+                    <div id="desc"></div>
+                    <div id="wIcon"></div>
+                    <div id="temp"></div>
+                </div>
+                <div id="days">
+                    <div id="day0" class="day"></div>
+                    <div id="day1" class="day"></div>
+                    <div id="day2" class="day"></div>
+                    <div id="day3" class="day"></div>
+                    <div id="day4" class="day"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content__container">
+            <span class="time">
+                <span id="digit1"></span><span>:</span><span id="digit2"></span>
+            </span>
+            <br />
+            <h2 id="userText">Good <span id="timeGreetingText"></span>, <span id="username">User</span></h2>
+            <input id="usernameInput">
+            
+            <div class="span-col-9 focus" id="focus-container">
+                <!--<h3 id="focus-display">What is your main focus for today?</h3>
+                        <input type="text" class="focusText" id="focus"> -->
+            </div>
+        </div>
+
+        <div class="quote__container fade">
+            <p id="quote"></p>
+            <p id="author"></p>
+        </div>
+
+        <div class="todo_modal">
+            <div id="todos"></div>
+            <input type="text" placeholder="New Todo" id="new-todo" />
+        </div>
+
+        <div class="todo_button">
+            <button>TODO</button>
+        </div>
+
+    </div>
+</body>
+</html>
